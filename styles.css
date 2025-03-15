@@ -1,0 +1,266 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF6600;
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for desktop nav links */
+@media (min-width: 769px) {
+    .nav-links a:hover {
+        color: #ffcc00;
+    }
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Mobile Full-Screen Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.mobile-menu.open {
+    transform: translateY(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Close Button */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Main Content Container - Centered and Responsive */
+.container {
+    width: 100%;
+    max-width: 1500px; /* Set a max width */
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff; /* Optional: Add a background for better contrast */
+    border-radius: 10px; /* Optional: Soft edges */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Light shadow */
+}
+
+/* Article - Inside the container */
+article {
+    text-align: left;
+    width: 100%;
+}
+
+article h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* FAQ Section - Inside the container */
+.faq {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* FAQ Item */
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-question {
+    width: 100%;
+    background: #FF6600;
+    color: white;
+    font-size: 1.2rem;
+    text-align: left;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #e65c00;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background: #f9f9f9;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Open FAQ */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    article h1 {
+        font-size: 1.8rem;
+    }
+
+    .faq h2 {
+        font-size: 1.6rem;
+    }
+
+    .faq {
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Increase font sizes for desktop view only */
+@media screen and (min-width: 769px) {
+    article h1 {
+        font-size: 3rem; /* Increased from 2rem */
+    }
+
+    article p {
+        font-size: 2.4rem; /* Increased from 1.1rem */
+    }
+    article h2 {
+        font-size: 2.8rem; /* Increased from 1.1rem */
+    }
+    article li {
+        font-size: 2.4rem;
+    }
+
+    .faq h2 {
+        font-size: 2.8rem; /* Increased from 1.6rem */
+    }
+    
+
+    .faq-question {
+        font-size: 2.4rem; /* Increased from 1.2rem */
+    }
+
+    .faq-answer {
+        font-size: 2.3rem; /* Increased from 1rem */
+    }
+}
